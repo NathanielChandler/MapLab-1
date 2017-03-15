@@ -9,6 +9,7 @@ public:
 	Location(std::string name);
 	~Location();
 	std::string DisplayLocationInfo();
+	std::string GetName();
 
 	Location *North = nullptr;
 	Location *South = nullptr;

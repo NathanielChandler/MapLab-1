@@ -5,7 +5,8 @@ class Map
 {
 private:
 	std::stack<Location *> _locationsVisited;
-	
+	std::string _startLocationName;
+
 public:
 	Map(std::string startLocationName);
 	~Map();
