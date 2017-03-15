@@ -52,7 +52,7 @@ void GoNorth(Map &map)
 		cin >> name;
 		newLocation = new Location(name);
 		cout << "This place is now called: " + name << endl;
-		
+		map.CurrentLocation->North = newLocation;
 	}
 	else
 	{
@@ -74,7 +74,7 @@ void GoEast(Map &map)
 		cin >> name;
 		newLocation = new Location(name);
 		cout << "This place is now called: " + name << endl;
-
+		map.CurrentLocation->East = newLocation;
 	}
 	else
 	{
@@ -96,7 +96,7 @@ void GoSouth(Map &map)
 		cin >> name;
 		newLocation = new Location(name);
 		cout << "This place is now called: " + name << endl;
-
+		map.CurrentLocation->South = newLocation;
 	}
 	else
 	{
@@ -118,7 +118,7 @@ void GoWest(Map &map)
 		cin >> name;
 		newLocation = new Location(name);
 		cout << "This place is now called: " + name << endl;
-
+		map.CurrentLocation->West = newLocation;
 	}
 	else
 	{
