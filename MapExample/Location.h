@@ -6,7 +6,7 @@ private:
 	std::string _name;
 	
 public:
-	Location(std::string name);
+	Location(std::string name, int xInt, int yInt);
 	~Location();
 	std::string DisplayLocationInfo();
 	std::string GetName();
@@ -15,5 +15,8 @@ public:
 	Location *South = nullptr;
 	Location *East = nullptr;
 	Location *West = nullptr;
+
+	int x;
+	int y;
 };
 

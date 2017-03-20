@@ -4,7 +4,8 @@
 
 Map::Map(std::string startLocationName)
 {
-	CurrentLocation = new Location(startLocationName);
+	CurrentLocation = new Location(startLocationName, 0 , 0);
+	_HashTable.emplace("0,0", CurrentLocation);
 	_locationsVisited.push(CurrentLocation);
 	_startLocationName = startLocationName;
 }
@@ -16,6 +17,15 @@ Map::~Map()
 
 void Map::Move(Location *newLocation) 
 {	
+	std::string checkNorth = std::to_string(newLocation->x)+ "," + std::to_string(newLocation->y + 1);
+	std::string checkSouth = std::to_string(newLocation->x) + "," + std::to_string(newLocation->y - 1);
+	std::string checkEast = std::to_string(newLocation->x + 1) + "," + std::to_string(newLocation->y);
+	std::string checkWest = std::to_string(newLocation->x - 1) + "," + std::to_string(newLocation->y);
+
+	if (_HashTable.count(checkNorth) == 1)
+	{
+		newLocation->North = _HashTable.at(checkNorth);
+	}
 	_locationsVisited.push(newLocation);
 	CurrentLocation = newLocation;
 }
