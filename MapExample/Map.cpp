@@ -22,14 +22,26 @@ void Map::Move(Location *newLocation)
 
 std::string Map::GetPathBackToHome()
 {
-	std::string pathHome = "Taking Path Home: ";
-	while (CurrentLocation->GetName() != _startLocationName)
+	std::stack<Location *> _tempLocations = _locationsVisited;
+	Location * tempCurrent = CurrentLocation;
+	std::string pathHome = "Path Home: ";
+	while (tempCurrent->GetName() != _startLocationName)
 	{
-		pathHome += CurrentLocation->GetName() + " -> ";
-		_locationsVisited.pop();
-		CurrentLocation = _locationsVisited.top();
+		pathHome += tempCurrent->GetName() + " -> ";
+		_tempLocations.pop();
+		tempCurrent = _tempLocations.top();
 	}
 	pathHome += "Home";
 	
 	return pathHome;
+}
+
+void Map::GoHome()
+{
+	while (CurrentLocation->GetName() != _startLocationName)
+	{
+		
+		_locationsVisited.pop();
+		CurrentLocation = _locationsVisited.top();
+	}
 }

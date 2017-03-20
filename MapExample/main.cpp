@@ -6,7 +6,7 @@ void GoNorth(Map &map);
 void GoSouth(Map &map);
 void GoEast(Map &map);
 void GoWest(Map &map);
-
+void GoHome(Map &map);
 
 int main()
 {
@@ -31,7 +31,7 @@ int main()
 		case 3: GoEast(map); break;
 		case 4: GoSouth(map); break;
 		case 5: GoWest(map); break;
-		case 6: system("cls");  cout << map.GetPathBackToHome() << endl; break;
+		case 6: GoHome(map); break;
 		case 0: break;
 		default: cout << "Enter a valid option"; break;
 		}
@@ -127,4 +127,17 @@ void GoWest(Map &map)
 	newLocation->East = map.CurrentLocation;
 	map.Move(newLocation);
 	return;
+}
+
+void GoHome(Map &map)
+{
+	system("cls");  
+	cout << map.GetPathBackToHome() << endl;
+	cout << "Would you like to return to Home? (y/n)" << endl;
+	char select;
+	cin >> select;
+	if (select == 'y' || select == 'Y')
+	{
+		map.GoHome();
+	}
 }
