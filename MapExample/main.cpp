@@ -19,7 +19,7 @@ int main()
 		cout << "2) Go North" << endl;
 		cout << "3) Go East" << endl;
 		cout << "4) Go South" << endl;
-		cout << "5) Go west" << endl;
+		cout << "5) Go West" << endl;
 		cout << "6) Path To Home" << endl;
 		cout << "0) Exit" << endl;
 		cin >> choice;
