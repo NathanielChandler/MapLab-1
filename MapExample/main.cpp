@@ -26,7 +26,7 @@ int main()
 
 		switch (choice) 
 		{
-		case 1: cout << "Current Location: " << map.CurrentLocation->DisplayLocationInfo(); break;
+		case 1: cout << "Current " << map.CurrentLocation->DisplayLocationInfo(); break;
 		case 2: GoNorth(map); break;
 		case 3: GoEast(map); break;
 		case 4: GoSouth(map); break;

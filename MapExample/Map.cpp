@@ -43,6 +43,8 @@ void Map::Move(Location *newLocation)
 		newLocation->West = _HashTable.at(checkWest);
 	}
 	_locationsVisited.push(newLocation);
+	_HashTable.emplace(std::to_string(newLocation->x)
+		+ "," + std::to_string(newLocation->y), newLocation);
 	CurrentLocation = newLocation;
 }
 
